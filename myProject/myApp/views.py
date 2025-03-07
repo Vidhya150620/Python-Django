@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .db import db,myCollection,myCollection2
+from .db import db,myCollection,myCollection2,myUser
 from django.http import HttpResponse
 from bson.objectid import ObjectId
 # Create your views here.
@@ -70,3 +70,19 @@ def editProduct(req,id):
     
     # If not a POST request, show the form with existing product data
     return render(req, 'edit.html', {'product': product})
+
+def login(req):
+    if req.method == "POST":
+        userName = req.POST.get("name")
+    
+        userPassword = req.POST.get("password")
+
+        print(userName,userPassword)
+
+        user = myUser.find_one({"name":userName, "password":userPassword})
+        print(user,"ischeck")
+        if user:
+            return redirect("productsList")
+        else:
+            return render(req,"login.html")
+    return render(req, "login.html")

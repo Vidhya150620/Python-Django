@@ -4,3 +4,4 @@ client = pymongo.MongoClient("mongodb+srv://svaithi2004:yHc4GWxLSBeuGj-@cluster0
 db = client["test"]
 myCollection = db["products"]
 myCollection2 = db["categories"]
+myUser = db["users"]
