@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+
+
+  
+    <table>
+  <tr>
+    <th>Sno</th>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  {% for user in users %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ user.Name }}</td>
+    <td>{{ user.Age }}</td>
+  </tr>
+  {% endfor %}
+</table>
+  </body>
+</html>

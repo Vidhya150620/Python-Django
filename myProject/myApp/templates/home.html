@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Add product form</p>
+    <form method="post" action="{% url 'product' %}">
+        {% csrf_token %}
+        <lable>Product name</lable>
+        <input type="text" name="productName">
+        <lable>Price</lable>
+        <input type="number" name="price">
+        <label>Stock</label>
+        <input type="number" name="stock">
+        <button type="submit">Add Product</button>
+    </form>
+ 
+
+    
+</body>
+</html>

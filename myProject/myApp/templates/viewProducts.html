@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>List of products</p>
+    <table border="1" cellPadding="20">
+      <tr>
+        <th>S:No</th>
+        <th>Product name</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Action</th>
+      </tr>
+      {% for user in getdatas %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ user.productName }}</td>
+        <td>{{ user.price }}</td>
+        <td>{{ user.stock }}</td>
+        <td>
+          <a href="{% url 'edit-product' user.id %}">
+            <button type="button">Edit</button>
+          </a>
+          
+            <a href="{% url 'delete-product' user.id %}">
+                <button type="button">Delete</button>
+            </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

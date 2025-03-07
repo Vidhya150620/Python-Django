@@ -1,0 +1,38 @@
+Django Commands
+---------------
+python -m venv env
+
+env\Scripts\activate
+
+pip install django
+----------------
+django-admin startproject project_name
+----------------
+cd project_name
+python manage.py startapp app_name
+
+----------------
+python manage.py makemigrations
+python manage.py migrate
+-----------------
+
+python manage.py runserver
+-----------------
+pip list
+pip freeze > requirements.txt
+
+-----------------
+python -m venv myenv
+myenv\scripts\activate
+
+pip install -r requirements.txt
+
+-----------------------
+init - package management.
+Manage. Py - command line utility we can access that to run, to create app , to migrate. 
+Dqslite - server less data base  - simple application use.
+asgi- asynchronous web gate way interface.
+wsgi - web server gateway interface.
+
+
+
