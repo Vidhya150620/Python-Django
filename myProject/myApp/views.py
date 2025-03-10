@@ -82,6 +82,8 @@ def login(req):
         user = myUser.find_one({"name":userName, "password":userPassword})
         print(user,"ischeck")
         if user:
+            req.session["isLogin"] = True
+            print(req.session.items()) 
             return redirect("productsList")
         else:
             return render(req,"login.html")
